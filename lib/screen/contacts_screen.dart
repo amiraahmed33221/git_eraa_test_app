@@ -1,102 +1,67 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_app/screen/about_screen.dart';
-import 'package:test_app/screen/levels_screen.dart';
+import 'package:slide_to_act/slide_to_act.dart';
+import 'package:test_app/screen/user_screen.dart';
+
+import '../components/sub_text.dart';
+import '../components/tags_text.dart';
 
 class ContactsScreen extends StatelessWidget {
   const ContactsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // double ScreenHeight =MediaQuery.of(context).size.height;
-    // double ScreenWidth =MediaQuery.of(context).size.width;
-    // ignore: prefer_typing_uninitialized_variables
-
     return Scaffold(
-      // body: Container(
-      //   color: Colors.black,
-      //   width: ScreenWidth,
-      //   child: Center(
-      //     child: LayoutBuilder(
-      //       builder:(context,constrains) {
-      //         double localHeight=constrains.maxHeight;
-      //         double localWidth=constrains.maxWidth;
-      //         print('height=$ScreenHeight');
-      //         print('localHeight =$localHeight');
-      //         print('width=$ScreenWidth');
-      //         print('localWidth=$localWidth');
-      //      return   Container(
-      //           color: Colors.red,
-      //        width: localWidth /2,
-      //        height: localHeight/2,
-      //         );
-      //       }
-      //     ),
-      //   ),
-      // ),
-
-      backgroundColor: Color(0xff1e1147),
-      body: Center(
-              child: Column(
-                children: [
-                  Container(
-                    child: const Image(
-                      image: AssetImage("assets/a1.jpg"),
-                    ),
-                  ),
-                  Container(
-                    margin:EdgeInsets.only(top: 30),
-
-                    // padding: EdgeInsets.all(20),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color(0xff6a49fe),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                        // side: BorderSide(color: Colors.indigo.shade400,width: 3),
-                        fixedSize: const Size(280, 50),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LevelsScreen()),
-                        );
-                      },
-                      child: const Text('Play Now'),
-                    ),
-                  ),
-                  Container(
-                    margin:EdgeInsets.only(top: 30),
-
-                    // padding: EdgeInsets.all(20),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color(0xff1f1147),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                        side: BorderSide(color: Color(0xff331e7f),width: 2),shadowColor:Color(0xff331e7f) ,
-                        fixedSize: const Size(280, 50),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LevelsScreen()),
-                        );
-                      },
-                      child: const Text('Play Now'),
-                    ),
-                  ),
-
-                ],
-              ),
+      backgroundColor: Colors.grey,
+      body: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('assets/travel.png')),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TagsText(textValue:'Explore Beauty'),
+                TagsText(textValue:'Of Journey'),
+                SubText(textValue: 'Everything you can imagine is here',),
+              ],
+            ),
+          ),
+          SizedBox(height: 350,),
+          Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SlideAction(
+                  borderRadius: 12,
+                  elevation: 0,
+                  innerColor: Color(0xff24161b),
+                  outerColor: Color(0xff7e6c67),
+                  sliderButtonIcon: Icon(Icons.double_arrow_rounded,color: Colors.grey,),
+                  text: "Swipe to Explore Now",
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                  sliderRotate: false,
+                  onSubmit: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => UserScreen()),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          Center(child: Text('Privacy Policy',style: TextStyle(color:Colors.white))),
+        ],
+      ),
     );
   }
 }
-
-
-
-
-
-
-
-
-

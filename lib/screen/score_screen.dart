@@ -10,7 +10,7 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Results',style: TextStyle(color: Colors.greenAccent))),
+        title: const Center(child: Text('Results',style: TextStyle(color: Colors.greenAccent))),
         backgroundColor: Color(0xff1f1147),
         elevation: 0,
       ),
