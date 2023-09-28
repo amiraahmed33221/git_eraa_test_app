@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 
 import 'color_screen.dart';
 
-class ContactsScreen2 extends StatelessWidget {
-  const ContactsScreen2({super.key});
+class ContactsScreen extends StatelessWidget {
+
 
   @override
   Widget build(BuildContext context) {

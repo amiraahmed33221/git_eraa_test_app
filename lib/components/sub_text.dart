@@ -11,7 +11,7 @@ class SubText extends StatelessWidget {
     return Text(
         textValue.toUpperCase(),
         style: TextStyle(
-        color:Color(0xff25171b),
+        color:Color(0xfffdfdfe),
     ),
     );
   }

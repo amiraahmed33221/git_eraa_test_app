@@ -1,15 +1,15 @@
-class QuizModel  {
-  String numberQuestion;
-  String image;
-  String question;
-  Map<String, bool> answers;
-
-  QuizModel(
-      {required this.numberQuestion,
-      required this.image,
-      required this.question,
-      required this.answers});
-}
+// class QuizModel  {
+//   String numberQuestion;
+//   String image;
+//   String question;
+//   Map<String, bool> answers;
+//
+//   QuizModel(
+//       {required this.numberQuestion,
+//       required this.image,
+//       required this.question,
+//       required this.answers});
+// }
 
 // List<QuizModel> QuizData = [
 //   QuizModel(

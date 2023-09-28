@@ -9,8 +9,8 @@ class TagsText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       textValue.toUpperCase(),
-      style: TextStyle(
-        color:Color(0xff25171b),
+      style: const TextStyle(
+        color:Colors.white,
         fontSize: 24,
         fontWeight: FontWeight.w900,
 
